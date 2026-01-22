@@ -20,6 +20,7 @@ seminar-1/
 - CMake 
 - C++ Compiler with C++17 support (for example, GCC, CLANG)
 - Git
+- ninja
 
 ## Build
 ### Configure the build system:
@@ -66,3 +67,4 @@ Example:
 - Input: `8 3` Output: `5` (8 - 3 = 5)
 - Input: `5 10` Output: `-5` (5 - 10 = -5)
 - Input: `-4 -2` Output: `-2` (-4 - (-2) = -2)
+
