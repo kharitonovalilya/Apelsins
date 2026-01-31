@@ -33,7 +33,7 @@ cmake -S . -B build -G Ninja
 ```bash
 ninja -C build
 ```
-## Run the project:
+### Run the project:
 ```bash
 ./build/seminar-2
 ```
@@ -106,4 +106,5 @@ Invalid input
 
 Invalid input
 ```
+
 
