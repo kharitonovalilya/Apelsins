@@ -38,11 +38,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE sub_lib)
 enable_testing()
 
 add_executable(unit_tests tests/test_sub.cpp)
-target_link_libraries(unit_tests PRIVATE sub_lib Catch2::Catch2WithMain)
 target_include_directories(unit_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
-
-# ПРАВИЛЬНАЯ СТРОКА: линкуем с sub_lib и Catch2
 target_link_libraries(unit_tests PRIVATE sub_lib Catch2::Catch2WithMain)
 
-# Регистрируем тест
 add_test(NAME sub-tests COMMAND unit_tests)
