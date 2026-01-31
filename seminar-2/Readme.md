@@ -9,10 +9,10 @@ seminar-2/
 ├── Readme.md                   # About our project (this file)
 ├── include/                    # Header files directory
 │   ├── calculate.h             # Expression calculation interface
-    └── input_checkers.h        # Input validation interface
+│   └── input_checkers.h        # Input validation interface
 ├── src/                        # Source files directory
 │   ├── main.cpp                # Main application entry point
-    ├── calculate.cpp           # Expression calculation implementation
+│   ├── calculate.cpp           # Expression calculation implementation
 │   └── input_checkers.cpp      # Input validation implementation 
 └── tests/                      # Test files directore
     
@@ -106,3 +106,4 @@ Invalid input
 
 Invalid input
 ```
+
