@@ -106,12 +106,9 @@ Invalid input
 Invalid input
 ```
 
-##### Empty input:
+## Unit Testing
+Run the tests:
+```bash
+ninja test
 ```
-
-Invalid input
-```
-
-
-
-
+All tests use the Catch2 testing framework and are automatically executed when you run the test target.
