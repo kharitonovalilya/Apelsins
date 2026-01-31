@@ -1,19 +1,21 @@
-# Task 1 - Subtraction calculator
+# Task 2 - Expression Calculator
 
-This project provides a demonstration of a basic command-line calculator capable of performing integer subtraction. It highlights key C++ programming concepts, the use of CMake for project building and Catch2 for testing.
+This project implements a mathematical expression calculator. The program reads the mathematical expression entered by the user, analyzes it for correctness and calculates its value. It supports arithmetic operations of addition and subtraction and demonstrates C++ programming concepts such as working with strings and error handling. The project uses CMake for building and Catch2 for unit testing.
 
 ## Project Structure
 ```
-seminar-1/
-├── CMakeLists.txt        # CMake configuration
-├── Readme.md             # About our project (this file)
-├── include/              # Header files
-│   └── sub.h             # Subtraction function declaration
-├── src/                  # Source files
-│   ├── main.cpp          # Main application entry point
-│   └── sub.cpp           # Subtraction function implementation
-└── tests/                # Test files
-    └── test_sub.cpp      # Unit tests using Catch2
+seminar-2/
+├── CMakeLists.txt              # CMake configuration file
+├── Readme.md                   # About our project (this file)
+├── include/                    # Header files directory
+│   ├── calculate.h             # Expression calculation interface
+    └── input_checkers.h        # Input validation interface
+├── src/                        # Source files directory
+│   ├── main.cpp                # Main application entry point
+    ├── calculate.cpp           # Expression calculation implementation
+│   └── input_checkers.cpp      # Input validation implementation 
+└── tests/                      # Test files directore
+    
 ```
 
 ## Requirements
@@ -33,38 +35,74 @@ ninja -C build
 ```
 ## Run the project:
 ```bash
-./build/seminar-1
+./build/seminar-2
 ```
 
-The program will prompt you to enter two integer numbers. It will:
-1. Handle invalid input and terminate the program
-2. If your input is correct, display the difference of the two numbers (first minus second) and terminate
+## Program Behavior
+
+The program will prompt you to enter a mathematical expression. It will:
+1. Validate the input for:
+   · Valid characters (digits, spaces, plus '+', minus '-')
+   · Correct syntax
+2. Handle invalid input:
+   · If the expression contains invalid characters, display: Invalid input
+   · If the operations are in wrong order (like - 2 3 or 2 +- 3), display: Invalid input
+   · Terminate the program after displaying the error
+3. Process valid expressions:
+   · Remove all whitespace characters
+   · Parse and calculate the result 
+   · Display the final result
+
+Supported Operations
+· Addition (+)
+· Subtraction (-)
+· Multi-digit numbers
 
 ### Example Usage
+
+#### Valid Expressions:
+
 ```
-Enter two integer numbers:
-a b
+2+3
+5
+```
+```
+10 - 3 + 5
+12
+```
+```
+100 + 200 - 50
+250
+```
+
+#### Invalid Expressions:
+
+##### Invalid characters:
+```
+2 * 3
 Invalid input
 ```
 ```
-Enter two integer numbers:
-2 3
--1
+abc + 123
+Invalid input
 ```
 
-## Unit Testing
-Run the tests:
-```bash
-ninja test
+##### Wrong operation order:
 ```
-All tests use the Catch2 testing framework and are automatically executed when you run the test target.
++ 2 3
+Invalid input
+```
+```
+2 ++ 3
+Invalid input
+```
+```
+2 3 +
+Invalid input
+```
 
-## Mathematical Operation
-The calculator performs the operation:  
-**result = first_number - second_number**
+##### Empty input:
+```
 
-Example:  
-- Input: `8 3` Output: `5` (8 - 3 = 5)
-- Input: `5 10` Output: `-5` (5 - 10 = -5)
-- Input: `-4 -2` Output: `-2` (-4 - (-2) = -2)
-
+Invalid input
+```
