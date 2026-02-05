@@ -35,12 +35,8 @@ std::vector<std::vector<int>> step(const std::vector<std::vector<int>> &grid) {
   std::vector<std::vector<int>> new_grid = grid;
   for (int pos_x = 0; pos_x < x_size; pos_x++) {
     for (int pos_y = 0; pos_y < y_size; pos_y++) {
-      if (grid[pos_x][pos_y] == 1) {
+      if (neighbour_vir(grid, pos_x, pos_y)) {
         new_grid[pos_x][pos_y] = 1;
-      } else if (neighbour_vir(grid, pos_x, pos_y)) {
-        new_grid[pos_x][pos_y] = 1;
-      } else {
-        new_grid[pos_x][pos_y] = 0;
       }
     }
   }
