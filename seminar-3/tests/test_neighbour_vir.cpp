@@ -9,7 +9,7 @@ TEST_CASE("Check heighbours if they are viruses") {
     REQUIRE(neighbour_vir(grid, 0, 0) == true);
     REQUIRE(neighbour_vir(grid, 1, 1) == true);
     REQUIRE(neighbour_vir(grid, 0, 2) == false);
-    REQUIRE(neighbour_vir(grid, 0, 2) == false)
+    REQUIRE(neighbour_vir(grid, 0, 2) == false);
     REQUIRE(neighbour_vir(simple_grid, 0, 0) == false);
   }
 }
