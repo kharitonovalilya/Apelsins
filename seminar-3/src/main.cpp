@@ -9,5 +9,6 @@ int main() {
   for (int iteration = 0; iteration < k; ++iteration) {
     grid = step(grid);
   }
-  std::cout << countInfected(grid) << '\n';
+  std::cout << "Infected cells: " << countInfected(grid) << '\n';
+  printGrid(grid);
 }
