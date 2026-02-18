@@ -3,6 +3,7 @@
 
 #include <vector>
 
-std::vector<std::vector<double>> read_and_parse();
+std::map<std::string, std::vector<double>>
+read_and_parse(const std::string &filename, char delimetr);
 
 #endif
