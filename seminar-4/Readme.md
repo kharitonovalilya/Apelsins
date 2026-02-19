@@ -19,7 +19,7 @@ seminar-4/
 │   ├── statistics.cpp            # Statistical calculations implementation
 │   └── write_statistics_csv.cpp  # CSV export implementation
 └── data/ 
-    ├── input.cav                  # Data files to be processed
+    ├── input.csv                  # Data files to be processed
     └── output.csv
                         
 ```
@@ -69,7 +69,7 @@ The program processes numerical data files and generates comprehensive statistic
 
 ## Input File Format
 
-The program accepts data files in CSV format. Example input file `data/input.cav`:
+The program accepts data files in CSV format. Example input file `data/input.csv`:
 
 
 
