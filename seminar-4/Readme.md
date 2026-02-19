@@ -1,4 +1,4 @@
-# Task 2 - Expression Calculator
+# Task 4 - Statistical Data Processor
 
 This project implements a statistical data processor. The program reads numerical data from files, calculates statistical measures (minimum, maximum, mean, median, standard deviation), and exports the results to CSV format. It demonstrates C++ programming concepts such as file I/O, data parsing, statistical computations, and error handling. The project uses CMake for building.
 
