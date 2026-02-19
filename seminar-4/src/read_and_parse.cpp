@@ -1,9 +1,7 @@
 #include <fstream>
 #include <iostream>
-#include <map>
 #include <read_and_parse.h>
 #include <sstream>
-#include <string>
 
 std::map<std::string, std::vector<double>>
 read_and_parse(const std::string &filename, char delimeter) {

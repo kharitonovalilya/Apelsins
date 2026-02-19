@@ -5,8 +5,9 @@
 #include <string>
 #include <vector>
 
-void write_statistics_csv(const std::string& filename,
-                          const std::map<std::string, std::vector<double>>& data,
-                          char delimiter = ',');
+void write_statistics_csv(
+    const std::string &filename,
+    const std::map<std::string, std::vector<double>> &data,
+    char delimiter = ',');
 
 #endif

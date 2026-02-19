@@ -1,14 +1,11 @@
 #include "write_statistics_csv.h"
 #include "statistics.h"
 #include <fstream>
-#include <map>
-#include <string>
-#include <vector>
 
 void write_statistics_csv(
     const std::string &filename,
     const std::map<std::string, std::vector<double>> &data,
-    char delimiter = ',') {
+    char delimiter) {
   std::ofstream final_csv(filename);
   if (!final_csv.is_open()) {
     return;
