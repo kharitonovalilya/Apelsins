@@ -1,10 +1,19 @@
+#include <algorithm>
 #include <notes.h>
 #include <omp.h>
-#include <algorithm>
+
+void generate_id(std::stack<int> &deletedIds, int nextId) {
+  if (deletedIds.empty()) {
+    return nextId++;
+  }
+  int first_deleted_id = deletedIds.top();
+  deletedIds.pop();
+  return first_deleted_id;
+}
 
 void addNote(std::vector<Note> &notes,
              std::unordered_map<std::string, std::vector<int>> &tagIndex,
-             std::stack<int> &deletedIds, const std::string &text,
+             std::stack<int> &deletedIds, int nextId, const std::string &text,
              const std::vector<std::string> &tags) {
   int id = generate_id(deletedIds);
   notes.emplace_back(id, text, tags);
