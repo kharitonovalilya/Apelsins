@@ -15,7 +15,7 @@ set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0")
 # --- Create lib ---
 add_library(seminar5_lib 
     src/work_with_notes.cpp
-    src/print_notes.cpp
+    src/print_note.cpp
     src/statistics.cpp
 )
 
