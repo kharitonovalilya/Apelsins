@@ -8,4 +8,5 @@
 #include <vector>
 using Note = std::tuple<int, std::string, std::vector<std::string>>;
 void printNote(Note &note);
+void printAllNotes(std::vector<Note> &notes);
 #endif
