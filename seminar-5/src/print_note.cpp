@@ -8,3 +8,9 @@ void printNote(Note& note) {
   }
   std::cout << "\n";
 }
+
+void printAllNotes(std::vector<Note>& notes) {
+  for (auto& note : notes) {
+    printNote(note);
+  }
+}
