@@ -20,13 +20,6 @@ int main() {
   std::cout << "=== Все заметки ===" << std::endl;
   printAllNotes(notes);
 
-  // Поиск по тегу
-  std::cout << "\n=== Заметки с тегом #срочно ===" << std::endl;
-  auto urgent = findNotesByTag(notes, tagIndex, "срочно");
-  for (const auto &note : urgent) {
-    printNote(note);
-  }
-
   // Статистика
   std::cout << "\n=== Статистика тегов ===" << std::endl;
   auto stats = getTagStats(tagIndex);
