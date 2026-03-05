@@ -5,6 +5,7 @@
 #include <unordered_map>
 #include <vector>
 using Note = std::tuple<int, std::string, std::vector<std::string>>;
+int generate_id(std::stack<int> &deletedIds, int &nextId);
 void addNote(std::vector<Note> &notes,
              std::unordered_map<std::string, std::vector<int>> &tagIndex,
              std::stack<int> &deletedIds, int &nextId, const std::string &text,
