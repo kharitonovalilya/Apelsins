@@ -29,9 +29,13 @@ void deleteNote(
     std::vector<std::tuple<int, std::string, std::vector<std::string>>> &notes,
     std::unordered_map<std::string, std::vector<int>> &tagIndex,
     std::stack<int> &deletedIds, int id) {
-  auto noteToDelete =
-      std::find_if(notes.begin(), notes.end(),
-                   [id](const auto &Note) { return std::get<0>(Note) == id; });
+  auto noteToDelete = notes.end();
+  for (auto current = notes.begin(); current != notes.end(); ++current) {
+    if (std::get<0>(*current) == id) {
+      noteToDelete = current;
+      break;
+    }
+  }
   if (noteToDelete != notes.end()) {
     const auto &tagsToDelete = std::get<2>(*noteToDelete);
 #pragma omp parallel for
@@ -43,7 +47,7 @@ void deleteNote(
 #pragma omp critical
         {
           std::vector<int> tempVector;
-          for (int currentId: noteID) {
+          for (int currentId : noteID) {
             if (currentId != id) {
               tempVector.push_back(currentId);
             }
@@ -52,9 +56,9 @@ void deleteNote(
         }
       }
     }
-    for (const auto& tag: tagsToDelete) {
+    for (const auto &tag : tagsToDelete) {
       auto currentTag = tagIndex.find(tag);
-      if (currentTag != tagIndex.end() && -> second.empty()) {
+      if (currentTag != tagIndex.end() &&->second.empty()) {
         tagIndex.erase(tag);
       }
     }
