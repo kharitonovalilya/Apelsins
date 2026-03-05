@@ -1,4 +1,6 @@
 #include <notes.h>
+#include <print_note.h>
+#include <statistics.h>
 
 int main() {
   int nextId = 0;
