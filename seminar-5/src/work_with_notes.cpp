@@ -43,13 +43,19 @@ void deleteNote(
 #pragma omp critical
         {
           std::vector<int> tempVector;
-          for (int currentId : noteID) {
+          for (int currentId: noteID) {
             if (currentId != id) {
               tempVector.push_back(currentId);
             }
           }
           noteID = std::move(tempVector);
         }
+      }
+    }
+    for (const auto& tag: tagsToDelete) {
+      auto currentTag = tagIndex.find(tag);
+      if (currentTag != tagIndex.end() && -> second.empty()) {
+        tagIndex.erase(tag);
       }
     }
     notes.erase(noteToDelete);
