@@ -58,7 +58,7 @@ void deleteNote(
     }
     for (const auto &tag : tagsToDelete) {
       auto currentTag = tagIndex.find(tag);
-      if (currentTag != tagIndex.end() &&->second.empty()) {
+      if (currentTag != tagIndex.end() && currentTag->second.empty()) {
         tagIndex.erase(tag);
       }
     }
