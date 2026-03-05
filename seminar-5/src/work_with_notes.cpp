@@ -2,7 +2,7 @@
 #include <notes.h>
 #include <omp.h>
 
-int generate_id(std::stack<int> &deletedIds, int nextId) {
+int generate_id(std::stack<int> &deletedIds, int &nextId) {
   if (deletedIds.empty()) {
     return nextId++;
   }
@@ -13,7 +13,7 @@ int generate_id(std::stack<int> &deletedIds, int nextId) {
 
 void addNote(std::vector<Note> &notes,
              std::unordered_map<std::string, std::vector<int>> &tagIndex,
-             std::stack<int> &deletedIds, int nextId, const std::string &text,
+             std::stack<int> &deletedIds, int &nextId, const std::string &text,
              const std::vector<std::string> &tags) {
   int id = generate_id(deletedIds, nextId);
   notes.emplace_back(id, text, tags);

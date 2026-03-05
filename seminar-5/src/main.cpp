@@ -1,15 +1,19 @@
 #include <notes.h>
 
 int main() {
+  int nextId = 0;
   std::vector<Note> notes;
   std::unordered_map<std::string, std::vector<int>> tagIndex;
   std::stack<int> deletedIds;
 
   // Добавление заметок
-  addNote(notes, tagIndex, deletedIds, "Купить молоко", {"покупки", "срочно"});
-  addNote(notes, tagIndex, deletedIds, "Позвонить маме", {"семья", "срочно"});
-  addNote(notes, tagIndex, deletedIds, "Написать отчёт", {"работа"});
-  addNote(notes, tagIndex, deletedIds, "Записаться к врачу", {"здоровье"});
+  addNote(notes, tagIndex, deletedIds, nextId, "Купить молоко",
+          {"покупки", "срочно"});
+  addNote(notes, tagIndex, deletedIds, nextId, "Позвонить маме",
+          {"семья", "срочно"});
+  addNote(notes, tagIndex, deletedIds, nextId, "Написать отчёт", {"работа"});
+  addNote(notes, tagIndex, deletedIds, nextId, "Записаться к врачу",
+          {"здоровье"});
 
   std::cout << "=== Все заметки ===" << std::endl;
   printAllNotes(notes);
