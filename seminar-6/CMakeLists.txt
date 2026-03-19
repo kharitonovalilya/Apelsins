@@ -21,8 +21,7 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O0 -Werror=return-type")
 set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0")
 
 # --- Create lib ---
-add_library(seminar6_lib 
-    src/safe_vector.cpp
+add_library(seminar6_lib
     src/transaction.cpp
 )
 
