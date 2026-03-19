@@ -12,7 +12,7 @@ template <typename T>
 void SafeVector<T>::push_back(const T& value) {
   if (size_ >= capacity_) {
     size_t new_capacity = 1;
-    if (capasity_ != 0) {
+    if (capacity_ != 0) {
       new_capacity = capacity_ * 2;
     }
     reallocate(new_capacity);
@@ -83,7 +83,7 @@ SafeVector<T>& SafeVector<T>::operator=(SafeVector other) {
 }
 
 template <typename T>
-void SafeVector<T>::swap(SafeVector& other) {
+void SafeVector<T>::swap(SafeVector& other) noexcept{
   using std::swap;
   swap(data_, other.data_);
   swap(size_, other.size_);
