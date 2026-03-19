@@ -19,8 +19,16 @@ public:
 
     T& operator[](size_t index);
     const T& operator[](size_t index) const;
-    void swap(SafeVector& other);
+    void swap(SafeVector& other) noexcept;
     size_t size() const;
+    iterator begin() noexcept { return data_; }
+    iterator end() noexcept { return data_ + size_; }
+
+    const_iterator begin() const noexcept { return data_; }
+    const_iterator end() const noexcept { return data_ + size_; }
+
+    const_iterator cbegin() const noexcept { return data_; }
+    const_iterator cend() const noexcept { return data_ + size_; }
 
 private:
     T* data_;
