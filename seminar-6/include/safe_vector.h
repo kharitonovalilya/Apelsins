@@ -9,6 +9,9 @@ class SafeVector {
 public:
     SafeVector();
     ~SafeVector();
+    using value_type = T;
+    using iterator = T*;
+    using const_iterator = const T*;
 
     SafeVector(const SafeVector&);
     SafeVector& operator=(SafeVector other);
