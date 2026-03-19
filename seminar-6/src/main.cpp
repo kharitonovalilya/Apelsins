@@ -4,11 +4,8 @@
 #include <safe_vector.h>
 #include <tuple>
 
-inline bool compareTransactions(const Transaction &element1,
-                                const Transaction &element2) {
-  return std::tie(element1.getMonth(), element1.getDay(),
-                  element1.getAmount()) <
-         std::tie(element2.getMonth(), element2.getDay(), element2.getAmount());
+inline bool compareTransactions(const Transaction& a, const Transaction& b) {
+    return a.asTuple() < b.asTuple();
 }
 
 void print_transactions(const SafeVector<Transaction> &vector) {
