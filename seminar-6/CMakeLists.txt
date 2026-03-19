@@ -22,8 +22,8 @@ set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0")
 
 # --- Create lib ---
 add_library(seminar6_lib 
-    src/logic.cpp
-    src/input_and_print.cpp
+    src/safe_vector.cpp
+    src/transaction.cpp
 )
 
 target_include_directories(seminar6_lib
