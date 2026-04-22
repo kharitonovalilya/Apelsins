@@ -1,7 +1,7 @@
 #ifndef PLAYLIST_H
 #define PLAYLIST_H
 
-#include "MediaFile.h"
+#include "mediafile.h"
 #include <vector>
 
 class Playlist {
