@@ -26,4 +26,4 @@ private:
   std::unordered_map<CurrencyCode, double> rates_to_usd_;
 };
 
-#endif CURRENCY_H
+#endif
