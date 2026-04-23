@@ -17,6 +17,7 @@ add_library(seminar7_lib
     src/podcast_episode.cpp
     src/playlist.cpp
     src/videoclip.cpp
+    src/audiotrack.cpp
 )
 
 target_include_directories(seminar7_lib
