@@ -32,7 +32,7 @@ void CheckingAccount::deposit(double amount) {
     if (amount <= 0) return;
     balance_ += amount;
 
-    Transaction tx("external", owner_id_, amount, CurrencyCode::USD, std::chrono::system_clock::now());
+    Transaction tx("external", owner_id_, amount, CurrencyCode::USD);
     add_transaction(tx);
 }
 
@@ -50,7 +50,7 @@ void CheckingAccount::withdraw(double amount) {
     balance_ -= amount;
     withdrawn_today_ += amount;
 
-    Transaction tx(owner_id_, "external", amount, CurrencyCode::USD, std::chrono::system_clock::now());
+    Transaction tx(owner_id_, "external", amount, CurrencyCode::USD);
     add_transaction(tx);
 }
 
