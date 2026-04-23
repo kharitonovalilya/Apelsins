@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CURRENCY_H
+#define CURRENCY_H
 
 #include <optional>
 #include <string>
@@ -24,3 +25,5 @@ public:
 private:
   std::unordered_map<CurrencyCode, double> rates_to_usd_;
 };
+
+#endif CURRENCY_H
