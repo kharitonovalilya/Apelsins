@@ -1,6 +1,6 @@
 #pragma once
 
-#include "bank_account.h"
+#include "bankaccount.h"
 #include "currency.h"
 #include "transaction.h"
 #include <optional>
